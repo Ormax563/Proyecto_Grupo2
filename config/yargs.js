@@ -28,7 +28,7 @@ let opt1 = {
     },
     anio: {
         alias: 'y',
-        default: 1960,
+        default: 2018,
         description: 'Indica el año'
     },
     salida: {
