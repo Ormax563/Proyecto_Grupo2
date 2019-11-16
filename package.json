@@ -1,0 +1,27 @@
+{
+  "name": "proyecto1",
+  "version": "1.0.0",
+  "description": "Proyecto Primer Parcial",
+  "main": "app.js",
+  "dependencies": {
+    "csv-parser": "^2.3.2",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ormax563/Proyecto-PW.git"
+  },
+  "keywords": [
+    "NodeJS"
+  ],
+  "author": "Jesús Ormaza, Paul Alvarez, Daniela Gonzalez, Julio Saráuz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ormax563/Proyecto-PW/issues"
+  },
+  "homepage": "https://github.com/Ormax563/Proyecto-PW#readme"
+}
