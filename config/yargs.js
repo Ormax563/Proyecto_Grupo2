@@ -32,7 +32,7 @@ let opt1 = {
         description: 'Indica el año'
     },
     salida: {
-        demand= true,
+        demand:true,
         alias: 'o',
         description: 'Indica el archivo de salida'
     }
