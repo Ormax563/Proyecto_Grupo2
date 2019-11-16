@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ormax563/Proyecto-PW.git"
+    "url": "git+https://github.com/diegoarias98/Proyecto_Grupo2.git"
   },
   "keywords": [
     "NodeJS"
@@ -21,7 +21,7 @@
   "author": "Jesús Ormaza, Paul Alvarez, Daniela Gonzalez, Julio Saráuz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ormax563/Proyecto-PW/issues"
+    "url": "https://github.com/diegoarias98/Proyecto_Grupo2/issues"
   },
-  "homepage": "https://github.com/Ormax563/Proyecto-PW#readme"
+  "homepage": "https://github.com/diegoarias98/Proyecto_Grupo2#readme"
 }
