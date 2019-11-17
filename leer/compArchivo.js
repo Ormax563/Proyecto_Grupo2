@@ -1,5 +1,6 @@
 const csv = require('csv-parser');
 const fs = require('fs');
+const col = require('../Colores/color');
 const { calcMedia, valCodigo, sobrePais, bajoPais } = require('../estadisticas/calculos');
 let leerArchivo = (archivo, anio, pais) => {
     suscrip = [];
@@ -39,17 +40,17 @@ let leerArchivo = (archivo, anio, pais) => {
 
             mayores = sobrePais(suscrip, valorPais, cod);
             menores = bajoPais(suscrip, valorPais, cod);
-            console.log(`\nMedia de suscripciones en el año ${anio} es ${mediaMundial}`);
-            console.log(`\nEl valor de las suscripciones del país ${nombrePais} con código ${pais} y valor ${valorPais} es ${estado} al promedio mundial`);
-            console.log(`\nLos cinco paises por encima del valor de suscripciones de ${nombrePais} son: `);
+            col.write(2, `\nMedia de suscripciones en el año ${anio} es ${mediaMundial}`);
+            col.write(2, `\nEl valor de las suscripciones del país ${nombrePais} con código ${pais} y valor ${valorPais} es ${estado} al promedio mundial`);
+            col.write(2, `\nLos cinco paises por encima del valor de suscripciones de ${nombrePais} son: `);
             for (var x in mayores) {
                 numb = mayores[x];
-                console.log("Codigo : " + cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
+                col.write(2, "Codigo : " + cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
             }
-            console.log(`\nLos cinco paises por debajo del valor de suscripciones de ${nombrePais} son: `);
+            col.write(2, `\nLos cinco paises por debajo del valor de suscripciones de ${nombrePais} son: `);
             for (var x in menores) {
                 numb = menores[x];
-                console.log("Codigo : " + cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
+                col.write(2, "Codigo : " + cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
             }
         });
 }
