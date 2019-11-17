@@ -8,10 +8,10 @@ let pais = argv.c;
 let anio = argv.y;
 
 switch (comando) {
-    case 'publicar':
+    case 'mostrar':
         compArchivo(archivo)
-        .then((archivo) =>{leerArchivo(archivo,anio, pais);})
-        .catch((archivo) => {console.log("El archivo no existe");})
+            .then((archivo) => { leerArchivo(archivo, anio, pais); })
+            .catch((archivo) => { console.log("El archivo no existe"); })
         break;
     case 'guardar':
         guardarArchivo(archivo, anio, pais);
@@ -19,6 +19,3 @@ switch (comando) {
     default:
         console.log('comando no valido');
 }
-
-
-
