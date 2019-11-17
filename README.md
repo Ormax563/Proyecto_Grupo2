@@ -1,5 +1,5 @@
 ** Integrantes:
 ** Jesús Ormaza
 ** Paul Alvarez
-** Daniela Gonzales
+** Daniela González
 ** Julio Saráuz
