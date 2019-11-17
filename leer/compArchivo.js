@@ -1,6 +1,6 @@
 const csv = require('csv-parser');
 const fs = require('fs');
-const { calcMedia, valCodigo, sobrePais } = require('../estadisticas/calculos');
+const { calcMedia, valCodigo, sobrePais, bajoPais } = require('../estadisticas/calculos');
 let leerArchivo = (archivo, anio, pais) => {
     suscrip = [];
     nom = [];
@@ -38,13 +38,18 @@ let leerArchivo = (archivo, anio, pais) => {
             top = [];
 
             mayores = sobrePais(suscrip, valorPais, cod);
-
-            console.log(`Media de suscripciones en el año ${anio} es ${mediaMundial}`);
-            console.log(`El valor de las suscripciones del país ${nombrePais} con código ${pais} y valor ${valorPais} es ${estado} al promedio mundial`);
-            console.log(`Los cinco paises por encima del valor de suscripciones de ${nombrePais} son: `);
+            menores = bajoPais(suscrip, valorPais, cod);
+            console.log(`\nMedia de suscripciones en el año ${anio} es ${mediaMundial}`);
+            console.log(`\nEl valor de las suscripciones del país ${nombrePais} con código ${pais} y valor ${valorPais} es ${estado} al promedio mundial`);
+            console.log(`\nLos cinco paises por encima del valor de suscripciones de ${nombrePais} son: `);
             for (var x in mayores){
                 numb = mayores[x];
-                console.log("Codigo : "+cod[numb] + ", Nombre: " + nom[numb] + ", Suscripcion: " + suscrip[numb]);
+                console.log("Codigo : "+cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb] );
+            }
+            console.log(`\nLos cinco paises por debajo del valor de suscripciones de ${nombrePais} son: `);
+            for (var x in menores){
+                numb = menores[x];
+                console.log("Codigo : "+cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
             }
         });
 }

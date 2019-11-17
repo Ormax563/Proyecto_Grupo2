@@ -4,23 +4,19 @@ const fs = require('fs');
 let calcMedia = (datos) =>
 {   acu = 0;
     cont = 0;
-    
     for (var x in datos){
         acu += Number(datos[cont]);
         cont ++;
     }
-    
     return acu/cont;
 }
 
 let valCodigo = (codigos, pais) => {
     num = 0;
-    cont=0
     for (var x in codigos){
-        if(codigos[cont] == pais){
-            num = cont;
+        if(codigos[x] == pais){
+            num = x;
         }
-        cont ++;
     }
     return num;
 }
@@ -35,38 +31,57 @@ function sortFunction(a, b) {
 }
 
 let sobrePais = (datos, valorPais, codigos) => {
-    vec = [];
-    cont = 0;
+    tempVec = [];
     for (var x in datos){
         temp = [];
-        if(parseInt(datos[cont]) > parseInt(valorPais)){
-            temp.push(parseInt(datos[cont]));
-            temp.push(codigos[cont]);
-            vec.push(temp);
+        if(parseInt(datos[x]) > parseInt(valorPais)){
+            temp.push(parseInt(datos[x]));
+            temp.push(codigos[x]);
+            tempVec.push(temp);
         }
-        cont ++;
     }
-    vec.sort(sortFunction);
-    nums = []
-    cont = 0;
-    for (var x in vec){
-        if(cont < 5){
-            nums.push(vec[cont][1]); 
+    tempVec.sort(sortFunction);
+    nomPaises = []
+    for (var x in tempVec){
+        if(x < 5){
+            nomPaises.push(tempVec[x][1]); 
         }
-        cont ++;
     }
-    resf = []
-    cont = 0;
-    for (var x in nums){
-        resf.push(valCodigo(codigos, nums[x]));
-        cont ++;
+    posPaises = []
+    for (var x in nomPaises){
+        posPaises.push(valCodigo(codigos, nomPaises[x]));
     }
-    return resf;
+    return posPaises;
+}
+
+let bajoPais = (datos, valorPais, codigos) => {
+    tempVec = [];
+    for (var x in datos){
+        temp = [];
+        if(parseInt(datos[x]) < parseInt(valorPais)){
+            temp.push(parseInt(datos[x]));
+            temp.push(codigos[x]);
+            tempVec.push(temp);
+        }
+    }
+    tempVec.sort(sortFunction);
+    nomPaises = []
+    for (var x in tempVec){
+        if(x >= (tempVec.length-5)){
+            nomPaises.push(tempVec[x][1]); 
+        }
+    }
+    posPaises = []
+    for (var x in nomPaises){
+        posPaises.push(valCodigo(codigos, nomPaises[x]));
+    }
+    return posPaises;
 }
 
 
 module.exports = { 
     calcMedia,
     valCodigo,
-    sobrePais
+    sobrePais,
+    bajoPais
 }
