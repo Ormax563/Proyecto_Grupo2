@@ -9,7 +9,7 @@ let write = (tipo, texto) => {
     if (tipo >= 0 && tipo <= 6) {
         console.log(`\x1b[3${tipo}m%s\x1b[0m`, texto);
     } else {
-        console.log('Color no válido');
+        console.log('Color no válido. ');
     }
 }
 module.exports = {
