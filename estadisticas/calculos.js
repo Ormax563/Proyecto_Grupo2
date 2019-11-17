@@ -1,20 +1,19 @@
-
 const fs = require('fs');
 
-let calcMedia = (datos) =>
-{   acu = 0;
+let calcMedia = (datos) => {
+    acu = 0;
     cont = 0;
-    for (var x in datos){
+    for (var x in datos) {
         acu += Number(datos[cont]);
-        cont ++;
+        cont++;
     }
-    return acu/cont;
+    return acu / cont;
 }
 
 let valCodigo = (codigos, pais) => {
     num = 0;
-    for (var x in codigos){
-        if(codigos[x] == pais){
+    for (var x in codigos) {
+        if (codigos[x] == pais) {
             num = x;
         }
     }
@@ -24,17 +23,16 @@ let valCodigo = (codigos, pais) => {
 function sortFunction(a, b) {
     if (a[0] === b[0]) {
         return 0;
-    }
-    else {
+    } else {
         return (a[0] < b[0]) ? -1 : 1;
     }
 }
 
 let sobrePais = (datos, valorPais, codigos) => {
     tempVec = [];
-    for (var x in datos){
+    for (var x in datos) {
         temp = [];
-        if(parseInt(datos[x]) > parseInt(valorPais)){
+        if (parseInt(datos[x]) > parseInt(valorPais)) {
             temp.push(parseInt(datos[x]));
             temp.push(codigos[x]);
             tempVec.push(temp);
@@ -42,13 +40,13 @@ let sobrePais = (datos, valorPais, codigos) => {
     }
     tempVec.sort(sortFunction);
     nomPaises = []
-    for (var x in tempVec){
-        if(x < 5){
-            nomPaises.push(tempVec[x][1]); 
+    for (var x in tempVec) {
+        if (x < 5) {
+            nomPaises.push(tempVec[x][1]);
         }
     }
     posPaises = []
-    for (var x in nomPaises){
+    for (var x in nomPaises) {
         posPaises.push(valCodigo(codigos, nomPaises[x]));
     }
     return posPaises;
@@ -56,9 +54,9 @@ let sobrePais = (datos, valorPais, codigos) => {
 
 let bajoPais = (datos, valorPais, codigos) => {
     tempVec = [];
-    for (var x in datos){
+    for (var x in datos) {
         temp = [];
-        if(parseInt(datos[x]) < parseInt(valorPais)){
+        if (parseInt(datos[x]) < parseInt(valorPais)) {
             temp.push(parseInt(datos[x]));
             temp.push(codigos[x]);
             tempVec.push(temp);
@@ -66,22 +64,31 @@ let bajoPais = (datos, valorPais, codigos) => {
     }
     tempVec.sort(sortFunction);
     nomPaises = []
-    for (var x in tempVec){
-        if(x >= (tempVec.length-5)){
-            nomPaises.push(tempVec[x][1]); 
+    for (var x in tempVec) {
+        if (x >= (tempVec.length - 5)) {
+            nomPaises.push(tempVec[x][1]);
         }
     }
     posPaises = []
-    for (var x in nomPaises){
+    for (var x in nomPaises) {
         posPaises.push(valCodigo(codigos, nomPaises[x]));
     }
     return posPaises;
 }
+let rankin = (p, vec) => {
+    let pos = 0;
+    for (po in vec) {
+        if (vec[po] === p) {
+            pos = po;
+        }
+    }
+    return pos;
+}
 
-
-module.exports = { 
+module.exports = {
     calcMedia,
     valCodigo,
     sobrePais,
-    bajoPais
+    bajoPais,
+    rankin
 }

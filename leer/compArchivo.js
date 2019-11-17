@@ -1,9 +1,9 @@
 const csv = require('csv-parser');
 const fs = require('fs');
 const col = require('../Colores/color');
-const { calcMedia, valCodigo, sobrePais, bajoPais } = require('../estadisticas/calculos');
+const { calcMedia, valCodigo, sobrePais, bajoPais, rankin } = require('../estadisticas/calculos');
 let leerArchivo = (archivo, anio, pais) => {
-    suscrip = [];
+    var suscrip = [];
     nom = [];
     cod = [];
     fs.createReadStream(archivo)
@@ -40,18 +40,31 @@ let leerArchivo = (archivo, anio, pais) => {
 
             mayores = sobrePais(suscrip, valorPais, cod);
             menores = bajoPais(suscrip, valorPais, cod);
-            col.write(2, `\nMedia de suscripciones en el año ${anio} es ${mediaMundial}`);
-            col.write(2, `\nEl valor de las suscripciones del país ${nombrePais} con código ${pais} y valor ${valorPais} es ${estado} al promedio mundial`);
+            col.write(3, `\nMedia de suscripciones en el año ${anio} es ${mediaMundial}`);
+            col.write(4, `\nEl valor de las suscripciones del país ${nombrePais} con código ${pais} y valor ${valorPais} es ${estado} al promedio mundial`);
             col.write(2, `\nLos cinco paises por encima del valor de suscripciones de ${nombrePais} son: `);
             for (var x in mayores) {
                 numb = mayores[x];
                 col.write(2, "Codigo : " + cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
             }
-            col.write(2, `\nLos cinco paises por debajo del valor de suscripciones de ${nombrePais} son: `);
+            col.write(5, `\nLos cinco paises por debajo del valor de suscripciones de ${nombrePais} son: `);
             for (var x in menores) {
                 numb = menores[x];
-                col.write(2, "Codigo : " + cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
+                col.write(5, "Codigo : " + cod[numb] + ", Suscripcion: " + suscrip[numb] + ", Nombre: " + nom[numb]);
             }
+
+            suscrip.sort(function(a, b) {
+                return a - b;
+            });
+
+            col.write(4, '\nTop 5 del año específico');
+            for (var k = 0; k < 5; k++) {
+                let aa = suscrip[suscrip.length - 1 - k];
+                let pos = rankin(aa, suscrip);
+                col.write(4, `${k+1}) Pais: ${nom[pos]} Suscriptores: ${suscrip[pos]}`);
+            }
+
+
         });
 }
 
