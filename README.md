@@ -64,7 +64,7 @@ _Es primordial instalar estas librerias._
 _Para la ejecucion de la pagina web se debe correr el comando: publicar_
 
 ```
-node app.js publicar -f API_IT.CEL.SETS_DS2_es_csv_v2_485339.csv -c ECU -y 2014
+node app.js publicar -f datos.csv -c ECU -y 2014
 ```
 _Aqui nos aparecera el siguiente url: https://127.0.0.1:3000 _
 _Daremos ctrl + click para entrar en la pagina web_
