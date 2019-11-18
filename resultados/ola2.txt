@@ -1,0 +1,27 @@
+Datos:  Suscripciones a telefonía celular móvil 
+Nombre:  Ecuador
+Codigo:  ECU
+Año:    2014 
+
+Media de suscripciones en el año 2014 es 288581583.49800795
+El valor de las suscripciones del país Ecuador con código ECU y valor 16605737 es Menor al promedio mundial
+Los cinco paises por encima del valor de suscripciones de Ecuador son: 
+Codigo : ARE, Suscripcion: 38000, Nombre: Emiratos Árabes Unidos
+Codigo : GTM, Suscripcion: 4618586, Nombre: Guatemala
+Codigo : HKG, Suscripcion: 4930100, Nombre: Hong Kong, Región Administrativa Especial
+Codigo : CMR, Suscripcion: 516540, Nombre: Camerún
+Codigo : YEM, Suscripcion: 5213068382, Nombre: Yemen, Rep. del
+
+Los cinco paises por debajo del valor de suscripciones de Ecuador son: 
+Codigo : CZE, Suscripcion: 1110802, Nombre: República Checa
+Codigo : SYR, Suscripcion: 415029432, Nombre: República Árabe Siria
+Codigo : AGO, Suscripcion: 19114, Nombre: Angola
+Codigo : TUN, Suscripcion: 944008677, Nombre: Túnez
+Codigo : SEN, Suscripcion: 104948339, Nombre: Senegal
+
+Top 5 del año específico 
+1) Pais: Zimbabwe Suscriptores: 6999287655 
+2) Pais: Zambia Suscriptores: 5651725351 
+3) Pais: Sudáfrica Suscriptores: 5560467036 
+4) Pais: Yemen, Rep. del Suscriptores: 5213068382 
+5) Pais: Samoa Suscriptores: 4612497280 
