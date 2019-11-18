@@ -35,5 +35,5 @@ switch (comando) {
         guardarArchivo(archivo, anio, pais, name_arch)
         break;
     default:
-        console.log('comando no valido');
+        console.log('comando no valido no');
 }
