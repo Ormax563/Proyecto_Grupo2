@@ -1,0 +1,27 @@
+Datos:  Suscripciones a telefonía celular móvil 
+Nombre:  Estados Unidos
+Codigo:  USA
+Año:    2014 
+
+Media de suscripciones en el año 2014 es 288581583.49800795
+El valor de las suscripciones del país Estados Unidos con código USA y valor 355500000 es Mayor al promedio mundial
+Los cinco paises por encima del valor de suscripciones de Estados Unidos son: 
+Codigo : MNA, Suscripcion: 19562000, Nombre: Oriente Medio y Norte de África (excluido altos ingresos)
+Codigo : IDB, Suscripcion: 6378095, Nombre: mezcla de la AIF
+Codigo : NAC, Suscripcion: 23505559, Nombre: América del Norte
+Codigo : EMU, Suscripcion: 2530752, Nombre: Zona del Euro
+Codigo : ARB, Suscripcion: 37600, Nombre: El mundo árabe
+
+Los cinco paises por debajo del valor de suscripciones de Estados Unidos son: 
+Codigo : BRA, Suscripcion: 188351, Nombre: Brasil
+Codigo : FCS, Suscripcion: 3027243, Nombre: Frágiles y situaciones de conflicto afectados
+Codigo : IDN, Suscripcion: 6769312, Nombre: Indonesia
+Codigo : LIC, Suscripcion: 11092404, Nombre: Países de ingreso bajo
+Codigo : TMN, Suscripcion: 680829147, Nombre: Oriente Medio y Norte de África (BIRF y la AIF)
+
+Top 5 del año específico 
+1) Pais: Zimbabwe Suscriptores: 6999287655 
+2) Pais: Zambia Suscriptores: 5651725351 
+3) Pais: Sudáfrica Suscriptores: 5560467036 
+4) Pais: Yemen, Rep. del Suscriptores: 5213068382 
+5) Pais: Samoa Suscriptores: 4612497280 
